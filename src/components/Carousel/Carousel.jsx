@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import bg from "../../assets/bg.jpeg";
 import bg2 from "../../assets/bg2.jpeg";
-import logo from "../../assets/Logo.png"; // Import the image you want to display over the carousel
+import logo from "../../assets/Logo.png";
 
 const images = [
   { src: bg, alt: "Image 1" },

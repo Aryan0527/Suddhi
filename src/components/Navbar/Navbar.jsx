@@ -6,7 +6,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
 const Navbar = () => {
   return (
-    <div className="w-full flex items-center justify-between relative bg-black">
+    <div className="w-full flex items-center justify-between fixed top-0 left-0 z-50 bg-black/15">
       <ul className="flex-1 list-none text-start">
         <li className="inline-block my-2.5 mx-5 text-xl cursor-pointer text-white">
           <FiUser />
