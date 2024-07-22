@@ -1,8 +1,8 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import bg from "../../assets/bg.jpeg";
-import bg2 from "../../assets/bg2.jpeg";
+import bg from "../../assets/bg.svg";
+import bg2 from "../../assets/bg2.svg";
 import logo from "../../assets/Logo.png";
 
 const images = [
@@ -21,6 +21,7 @@ const CarouselComponent = () => {
         showStatus={false}
         dynamicHeight={true}
         swipeable={true}
+        interval={2000}
       >
         {images.map((image, index) => (
           <div key={index}>
@@ -33,7 +34,7 @@ const CarouselComponent = () => {
         alt="Logo"
         style={{
           position: "absolute",
-          bottom: "55%",
+          top: "15%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           zIndex: 1,

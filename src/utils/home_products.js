@@ -1,8 +1,7 @@
-
-import product1 from "../assets/product1.jpeg";
-import product2 from "../assets/product2.jpeg";
-import product3 from "../assets/product3.jpeg";
-import product4 from "../assets/product4.jpeg";
+import product1 from "../assets/product1.svg";
+import product2 from "../assets/product2.svg";
+import product3 from "../assets/product3.svg";
+import product4 from "../assets/product4.svg"
 
 export const newdrops_products = [
     {
