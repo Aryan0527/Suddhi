@@ -45,15 +45,15 @@ const DressesList = () => {
 
         <div className="w-3/4">
           <Swiper
-            spaceBetween={50}
+            spaceBetween={30}
             slidesPerView={3}
             autoplay={{
               delay: 2100,
               disableOnInteraction: false,
             }}
-            // pagination={{
-            //   clickable: true,
-            // }}
+            pagination={{
+              clickable: true,
+            }}
             // navigation={true}
             modules={[Autoplay]}
           >
