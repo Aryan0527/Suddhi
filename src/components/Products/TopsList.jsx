@@ -2,12 +2,15 @@ import React from "react";
 import { tops_products } from "../../utils/tops_product";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import CountdownTimer from "../CountdownTimer";
+import { MdOutlineTimer } from "react-icons/md";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
 
 const TopsList = () => {
+  const tenMinutesFromNow = new Date().getTime() + 10 * 60 * 1000;
   return (
     <div className="text-start py-8 relative bottom-10">
       <div className="flex items-center w-full">
@@ -38,6 +41,10 @@ const TopsList = () => {
                     </span>
                   </p>
                   <p>Sizes: {product.sizes.join(", ")}</p>
+                  <p className="flex font-semibold">
+                    <MdOutlineTimer className="text-2xl" />
+                    <CountdownTimer duration={tenMinutesFromNow} />
+                  </p>
                 </div>
               </div>
             </div>
@@ -79,6 +86,10 @@ const TopsList = () => {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
+                    <p className="flex font-semibold">
+                      <MdOutlineTimer className="text-2xl" />
+                      <CountdownTimer duration={tenMinutesFromNow} />
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>

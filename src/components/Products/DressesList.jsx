@@ -2,12 +2,17 @@ import React from "react";
 import { dress_products } from "../../utils/dress_products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import CountdownTimer from "../CountdownTimer";
+import { MdOutlineTimer } from "react-icons/md";
 
 // Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/autoplay";
 
 const DressesList = () => {
+  const tenMinutesFromNow = new Date().getTime() + 10 * 60 * 1000; //duration to 10 minutes from now
+
   return (
     <div className="text-start py-8 relative bottom-10">
       <div className="flex items-center w-full">
@@ -15,7 +20,7 @@ const DressesList = () => {
           .filter((ele, i) => i < 1)
           .map((product, index) => (
             <div key={index} className="w-1/4">
-              <div className=" p-4 m-2 w-64 relative">
+              <div className="p-4 m-2 w-64 relative">
                 <h2 className="text-xl font-semibold mt-[12px] ml-[18px] absolute top-0 left-0 z-10">
                   Dresses
                 </h2>
@@ -38,6 +43,10 @@ const DressesList = () => {
                     </span>
                   </p>
                   <p>Sizes: {product.sizes.join(", ")}</p>
+                  <p className="flex font-semibold">
+                    <MdOutlineTimer className="text-2xl" />
+                    <CountdownTimer duration={tenMinutesFromNow} />
+                  </p>
                 </div>
               </div>
             </div>
@@ -59,7 +68,7 @@ const DressesList = () => {
           >
             {dress_products.map((product, index) => (
               <SwiperSlide key={index}>
-                <div className=" p-4 m-2 w-64">
+                <div className="p-4 m-2 w-64">
                   <img
                     src={product.imgSrc}
                     alt={product.name}
@@ -79,6 +88,10 @@ const DressesList = () => {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
+                    <p className="flex font-semibold">
+                      <MdOutlineTimer className="text-2xl" />
+                      <CountdownTimer duration={tenMinutesFromNow} />
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>
