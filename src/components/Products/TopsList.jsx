@@ -48,7 +48,7 @@ const TopsList = () => {
             spaceBetween={30}
             slidesPerView={3}
             autoplay={{
-              delay: 2200,
+              delay: 2100,
               disableOnInteraction: false,
             }}
             pagination={{
