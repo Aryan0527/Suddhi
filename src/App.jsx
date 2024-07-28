@@ -8,7 +8,7 @@ import Trending from "./components/Trending/Trending";
 
 const App = () => {
   return (
-    <div className="bg-[#d5dec9]">
+    <div className="bg-green-100">
       <Navbar />
       <Carousel />
       <ProductList />
