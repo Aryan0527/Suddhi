@@ -29,17 +29,13 @@ const CarouselComponent = () => {
           </div>
         ))}
       </Carousel>
+      <div className=" absolute top-[0] w-full flex justify-center ">
       <img
         src={logo}
         alt="Logo"
-        style={{
-          position: "absolute",
-          top: "15%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          zIndex: 1,
-        }}
+    className="  absolute m-auto z-10"
       />
+      </div>
     </div>
   );
 };
