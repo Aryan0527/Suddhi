@@ -10,8 +10,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 const ProductList = () => {
-  const tenMinutesFromNow = new Date().getTime() + 10 * 60 * 1000;
-
   return (
     <div className="text-start py-8">
       <div className="flex items-center w-full">
@@ -44,7 +42,7 @@ const ProductList = () => {
                   <p>Sizes: {product.sizes.join(", ")}</p>
                   <p className="flex font-semibold">
                     <MdOutlineTimer className="text-2xl" />
-                    <CountdownTimer duration={tenMinutesFromNow} />
+                    <CountdownTimer  initialTime={600} />
                   </p>
                 </div>
               </div>
@@ -89,7 +87,7 @@ const ProductList = () => {
                     <p>Sizes: {product.sizes.join(", ")}</p>
                     <p className="flex font-semibold">
                       <MdOutlineTimer className="text-2xl" />
-                      <CountdownTimer duration={tenMinutesFromNow} />
+                      <CountdownTimer  initialTime={600} />
                     </p>
                   </div>
                 </div>

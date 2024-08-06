@@ -1,45 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-const CountdownTimer = ({ duration }) => {
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    const difference = duration - now.getTime();
-
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        minutes: Math.floor(difference / (1000 * 60)),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+const CountdownTimer = ({ initialTime }) => {
+  const [timeLeft, setTimeLeft] = useState(initialTime);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+    if (timeLeft === 0) {
+      setTimeLeft(initialTime);
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(intervalId);
+  }, [timeLeft, initialTime]);
 
   const formatTime = (time) => {
-    return time < 10 ? `0${time}` : time;
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    const formattedMinutes = String(minutes).padStart(2, "0");
+    const formattedSeconds = String(seconds).padStart(2, "0");
+    return `${formattedMinutes}:${formattedSeconds}`;
   };
 
   return (
     <div>
-      {timeLeft.minutes !== undefined && timeLeft.seconds !== undefined ? (
-        <span>
-          {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
-        </span>
-      ) : (
-        <span>You missed the Chance!</span>
-      )}
+      <h1>{formatTime(timeLeft)}</h1>
     </div>
   );
 };
