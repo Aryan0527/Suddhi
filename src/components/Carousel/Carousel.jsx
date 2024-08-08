@@ -35,13 +35,17 @@ const CarouselComponent = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-[600px] object-cover"
+              className="w-full h-[600px] object-cover sm:h-[500px] md:h-[400px] lg:h-[600px]"
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute top-0 w-full flex justify-center">
-        <img src={logo} alt="Logo" className="absolute m-auto z-10" />
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-[150px] sm:w-[120px] md:w-[100px] lg:w-[200px] mt-4"
+        />
       </div>
     </div>
   );
