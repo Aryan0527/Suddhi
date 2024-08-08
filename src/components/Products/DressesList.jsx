@@ -54,6 +54,8 @@ const DressesList = () => {
 
         <div className="w-full lg:w-3/4">
           <Swiper
+            loop={true}
+            loopAdditionSlides={3}
             spaceBetween={30}
             slidesPerView={1}
             breakpoints={{
@@ -61,7 +63,7 @@ const DressesList = () => {
                 slidesPerView: 1,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
               },
               1024: {
                 slidesPerView: 3,

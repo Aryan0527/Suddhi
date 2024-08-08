@@ -45,7 +45,7 @@ const ProductList = () => {
                   <p>Sizes: {product.sizes.join(", ")}</p>
                   <p className="flex justify-center lg:justify-start items-center font-semibold">
                     <MdOutlineTimer className="text-xl lg:text-2xl" />
-                    <CountdownTimer initialTime={600} />
+                    <CountdownTimer initialTime={20} />
                   </p>
                 </div>
               </div>
@@ -54,6 +54,8 @@ const ProductList = () => {
 
         <div className="w-full lg:w-3/4">
           <Swiper
+            loop={true}
+            loopAdditionSlides={3}
             spaceBetween={30}
             slidesPerView={1}
             breakpoints={{
@@ -61,7 +63,7 @@ const ProductList = () => {
                 slidesPerView: 1,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
               },
               1024: {
                 slidesPerView: 3,
