@@ -1,7 +1,7 @@
 import React from "react";
 import { tops_products } from "../../utils/tops_product";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import CountdownTimer from "../CountdownTimer";
 import { MdOutlineTimer } from "react-icons/md";
 
@@ -13,14 +13,20 @@ const TopsList = () => {
   return (
     <div className="text-start py-8 relative bottom-10">
       <div className="flex flex-col lg:flex-row lg:items-center w-full">
-        {tops_products
-          .filter((ele, i) => i < 1)
-          .map((product, index) => (
-            <div
-              key={index}
-              className="w-full lg:w-1/4 mb-4 lg:mb-0 lg:flex lg:justify-start"
-            >
-              <div className="p-4 m-2 w-full lg:w-64 relative lg:text-left">
+        {/* Mobile heading */}
+        <h2 className="text-xl font-semibold mt-4 mb-6 text-center lg:hidden">
+          Tops
+        </h2>
+
+        {/* Fixed card, hidden on mobile */}
+        <div className="hidden lg:flex lg:w-1/4 mb-4 lg:mb-0 lg:justify-start">
+          {tops_products
+            .filter((ele, i) => i < 1)
+            .map((product, index) => (
+              <div
+                key={index}
+                className="p-4 m-2 w-full lg:w-64 relative lg:text-left"
+              >
                 <h2 className="text-xl font-semibold mt-[12px] ml-[18px] absolute top-0 left-0 lg:static lg:ml-0 lg:mt-0 z-10">
                   Tops
                 </h2>
@@ -49,9 +55,10 @@ const TopsList = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
 
+        {/* Carousel */}
         <div className="w-full lg:w-3/4">
           <Swiper
             loop={true}
