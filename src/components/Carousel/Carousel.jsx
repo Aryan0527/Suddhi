@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import bg from "../../assets/bg.svg";
 import bg2 from "../../assets/bg2.svg";
 import logo from "../../assets/Logo.png";

@@ -64,7 +64,7 @@ const TopsList = () => {
             loop={true}
             loopAdditionSlides={3}
             spaceBetween={30}
-            slidesPerView={1}
+            slidesPerView={2}
             breakpoints={{
               640: {
                 slidesPerView: 2,
