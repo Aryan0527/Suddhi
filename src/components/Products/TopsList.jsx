@@ -27,13 +27,13 @@ const TopsList = () => {
                 key={index}
                 className="p-4 m-2 w-full lg:w-64 relative lg:text-left"
               >
-                <h2 className="text-xl font-semibold mt-[12px] ml-[18px] absolute top-0 left-0 lg:static lg:ml-0 lg:mt-0 z-10">
+                <h2 className="text-xl font-semibold mt-[12px] ml-[18px] absolute top-0 left-0 lg:ml-0 lg:mt-0 z-10">
                   Tops
                 </h2>
                 <img
                   src={product.imgSrc}
                   alt={product.name}
-                  className="w-full h-56 lg:h-3/6 mb-4 mx-auto lg:mx-0"
+                  className="w-full mb-4 mx-auto lg:mx-0"
                 />
                 <div className="text-center lg:text-left">
                   <h3 className="text-lg font-semibold">{product.name}</h3>
